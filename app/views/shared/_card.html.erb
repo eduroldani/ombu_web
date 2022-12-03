@@ -1,0 +1,21 @@
+
+
+ <div class="card">
+    <div class="card-headerr">
+       <%= image_tag "banner.jpg", class: "" %>
+    </div>
+    <div class="card-body">
+      <span class="tag tag-teal"><%= course.category.truncate(30)%></span>
+      <h4 class="mt-3">
+       <%= course.title.truncate(30) %>
+      </h4>
+      <p>
+        <%= course.description.truncate(100) %>
+      </p>
+      <div class="user">
+        <div class="user-info">
+          <h5><%= link_to "Ver Curso", course_path(course), class:"btn btn-primary"%></h5>
+        </div>
+      </div>
+    </div>
+  </div>

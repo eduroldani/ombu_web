@@ -1,0 +1,30 @@
+  <%= render 'shared/banner',title: "Ombu Hub", text: @course.title, btn: (link_to "Contacto", courses_path, class: "btn btn-primary")   %>
+
+
+<div class="show-div ">
+    <div class="row p-5 justify-content-center">
+        <div class="col-lg-3 m-3">
+            <h1><%= @course.title %></h1>
+            <p><%= @course.description %></p>
+            <%= link_to "Contacto", courses_path, class: "btn btn-primary" %>
+        </div>
+        <div class="col-lg-3 m-3">
+           <%= image_tag("banner.jpg") %>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="show-div ">
+    <div class="row p-5 justify-content-center">
+        <div class="col-lg-3 m-3">
+           <%= image_tag("banner.jpg") %>
+        </div>
+        <div class="col-lg-3 m-3">
+            <h1><%= @course.title %></h1>
+            <p><%= @course.description %></p>
+            <%= link_to "Contacto", courses_path, class: "btn btn-primary" %>
+        </div>
+    </div>
+</div>

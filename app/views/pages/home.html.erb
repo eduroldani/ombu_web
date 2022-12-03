@@ -1,13 +1,10 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'banner.jpg' %>);">
-  <div class="container">
-    <h1>Ombu <strong>Hub</strong>!</h1>
-    <p></p>
-    <a class="btn btn-primary" href="#">Contacto</a>
-  </div>
-</div>
+  <%= render 'shared/banner', title: "Ombu Hub", text: "Acelera tu conocimiemto con Ombu Hub", btn: (link_to "Ver Cursos", courses_path, class: "btn btn-primary")  %>
 
 
 <div class="container">
+
+
+
 
    <div class="my-3">
     <h2>Descubre los cursos de <strong>Ombu hub</strong></h2>
@@ -24,15 +21,7 @@
 
     <div class="cards mt-3">
       <% @courses.each do |course| %>
-        <div class="card" style="width: 18rem;">
-          <%= image_tag "banner.jpg", class: "card-img-top" %>
-            <div class="card-body">
-              <h5 class="card-title"><%= course.title.truncate(30) %></h5>
-              <p class="card-text"><%= course.description.truncate(100) %></p>
-              <p class="card-text"><%= course.date %></p>
-              <a href="#" class="btn btn-primary">Ver Mas</a>
-            </div>
-          </div>
+          <%= render 'shared/card' , course: course%>
         <% end %>
     </div>
 
@@ -42,3 +31,6 @@
 
 
 </div>
+
+
+  <%= render 'shared/banner',title: "Ombu Hub", text: "Acelera tu conocimiemto con Ombu Hub" , btn: (link_to "Ver Cursos", courses_path, class: "btn btn-primary")  %>
