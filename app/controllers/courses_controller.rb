@@ -1,12 +1,11 @@
 class CoursesController < ApplicationController
 
   def index
-    if params.present?
-      @courses = Course.all
-      # @courses = Course.where(title: params[:search])
-    else
-      @courses = Course.all
-    end
+      if params[:search].present?
+        @courses = Course.search_course(params[:search])
+      else
+        @courses = Course.all
+      end
   end
 
   def show
@@ -14,20 +13,27 @@ class CoursesController < ApplicationController
   end
 
   def new
-
+    @course = Course.new
   end
+
 
   def create
-
+    @course = Course.new(course_params)
+    if @course.save
+     redirect_to course_path(@course)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
-  def edit
+  private
+
+  def set_course
+    @course = Course.find(params[:id])
   end
 
-  def update
-  end
-
-  def destroy
+  def course_params
+    params.require(:course).permit(:title, :description, :photo)
   end
 
 end
