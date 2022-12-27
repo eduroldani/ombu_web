@@ -20,4 +20,12 @@ sami = User.create(first_name: "Sami", last_name: "Chamut", email: "sami@gmail.c
 
 end
 
+10.times do
+  Project.create(title: Faker::Restaurant.name , description:Faker::Restaurant.description, level: Faker::Device.build_number,category: Faker::Restaurant.type)
+end
+
+
+
+
+
 p "Seeds Done"

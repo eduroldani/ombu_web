@@ -1,12 +1,12 @@
 .btn-primary {
   color: white;
-  border: 1px solid $secundary;
+  border: 1px solid $secondary;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: normal;
   opacity: 1;
   transition: opacity 0.3s ease;
-  background-color: $secundary;
+  background-color: $secondary;
 }
 
 .btn-primary:hover {
@@ -14,20 +14,20 @@
   background-color: $primary;
 }
 
-.btn-secundary {
+.btn-secondary {
   color: white;
-  border: 1px solid $secundary;
+  border: 1px solid $primary;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: normal;
   opacity: 1;
   transition: opacity 0.3s ease;
-  background-color: $secundary;
+  background-color: $primary ;
 }
 
-.btn-secundary:hover {
+.btn-secondary:hover {
   opacity: 1;
-  background-color: $primary;
+  background-color: $secondary;
 }
 
 .btn-flat {

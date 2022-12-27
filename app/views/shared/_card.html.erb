@@ -5,12 +5,12 @@
        <%= image_tag "banner.jpg", class: "" %>
     </div>
     <div class="card-body">
-      <span class="tag tag-teal"><%= course.category.truncate(30)%></span>
+        <span class="tag tag-teal"><%= course.category.truncate(30) if course.category != nil%></span>
       <h4 class="mt-3">
        <%= course.title.truncate(30) %>
       </h4>
       <p>
-        <%= course.description.truncate(100) %>
+        <%= course.description.truncate(100) if course.description != nil %>
       </p>
       <div class="user">
         <div class="user-info">

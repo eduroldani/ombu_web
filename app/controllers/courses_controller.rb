@@ -26,6 +26,19 @@ class CoursesController < ApplicationController
     end
   end
 
+  def edit
+    @course = Course.find(params[:id])
+  end
+
+  def update
+    @course = Course.find(params[:id])
+    if @course.update(course_params)
+      redirect_to course_path(@course)
+     else
+      render :new, status: :unprocessable_entity
+     end
+  end
+
   private
 
   def set_course

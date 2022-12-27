@@ -1,30 +1,87 @@
-  <%= render 'shared/banner',title: "Ombu Hub", text: @course.title, btn: (link_to "Contacto", courses_path, class: "btn btn-primary")   %>
+  <%= render 'shared/banner',title: @course.title, text: "Aceleta tu conocimiento", btn: (link_to "Contacto", courses_path, class: "btn btn-primary")   %>
 
 
-<div class="show-div ">
-    <div class="row p-5 justify-content-center">
-        <div class="col-lg-3 m-3">
-            <h1><%= @course.title %></h1>
-            <p><%= @course.description %></p>
-            <%= link_to "Contacto", courses_path, class: "btn btn-primary" %>
+
+<div class="row p-3 justify-content-center mt-3">
+<div class="col-lg-6">
+    <div class="cards">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/7750712/pexels-photo-7750712.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)">
+          Aprende
         </div>
-        <div class="col-lg-3 m-3">
-           <%= image_tag("banner.jpg") %>
+
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/11025019/pexels-photo-11025019.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)">
+          Practica
         </div>
+
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/4145197/pexels-photo-4145197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)">
+          Juega
+        </div>
+    </div>
+
     </div>
 
 </div>
 
 
 <div class="show-div ">
-    <div class="row p-5 justify-content-center">
-        <div class="col-lg-3 m-3">
-           <%= image_tag("banner.jpg") %>
-        </div>
+    <div class="row p-3 justify-content-center">
         <div class="col-lg-3 m-3">
             <h1><%= @course.title %></h1>
             <p><%= @course.description %></p>
             <%= link_to "Contacto", courses_path, class: "btn btn-primary" %>
         </div>
+
+        <div class="col-lg-3 m-3">
+           <%= image_tag("foto_uno.png", class: "shadow") %>
+        </div>
+    </div>
+
+</div>
+
+    <div class="row justify-content-center p-3 ">
+      <div class="col-lg-6 m-3">
+        <h1>Proyecto(s)</h1>
+        <div class="card-product">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-product-infos">
+              <h2>Product name</h2>
+              <p>Product description with <strong>relevant info</strong> only.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="show-div ">
+    <div class="row p-3 justify-content-center">
+        <div class="col-lg-3 m-3">
+            <h1>Mas Informacion del curso: </h1>
+            <p><%= @course.description %></p>
+            <%= link_to "Contacto", courses_path, class: "btn btn-primary" %>
+        </div>
+
+        <div class="col-lg-3">
+           <%= image_tag("foto_dos.png", class: "shadow") %>
+        </div>
     </div>
 </div>
+
+
+<div class="container">
+    <% if user_signed_in? %>
+       <% if current_user.is_admin %>
+          <h2>Welcome: <%=current_user.first_name %></h2>
+          <div class="d-flex">
+            <%= link_to "Editar Curso", edit_course_path(@course), class: "btn btn-secondary  m-1" %>
+            <%= link_to "Ver Inscriptos", courses_path, class: "btn btn-secondary m-1" %>
+
+          </div>
+       <% end %>
+
+    <% end %>
+</div>
+
+
+ 

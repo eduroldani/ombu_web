@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Title: <%= @project.title %></h1>
+  <ul>
+      <li><%= @project.description %></li>
+      <li>Level: <%= @project.level %></li>
+      <li>Category: <%= @project.category %></li>
+  </ul>
+
+  <%= link_to "Edit Project", edit_project_path(@project), class: "" %>
+</div>

@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :courses
+
+  resources :projects
+
+  
 end
