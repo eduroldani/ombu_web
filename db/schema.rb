@@ -51,6 +51,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_094457) do
     t.index ["project_id"], name: "index_course_projects_on_project_id"
   end
 
+#just a comment 
+
   create_table "courses", force: :cascade do |t|
     t.string "title"
     t.date "date"
